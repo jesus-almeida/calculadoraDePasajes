@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculadora de Pasajes</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Calculadora de Pasajes</h1>
+
+    <div id="days"></div>
+
+    <div class="card">
+        <h3>Gastos adicionales</h3>
+        <input type="text" id="extraName" placeholder="Descripción">
+        <input type="number" id="extraAmount" placeholder="Monto">
+        <button onclick="addExpense()">Agregar</button>
+
+        <div id="expensesList"></div>
+    </div>
+
+    <div class="card config-panel" id="configPanel">
+        <h3>Configuración</h3>
+        Ruta 10: <input type="number" id="ruta10"><br>
+        Ruta 10-B: <input type="number" id="ruta10b"><br>
+        Ruta Universidad: <input type="number" id="rutaUni"><br>
+        <button onclick="saveConfig()">Guardar</button>
+    </div>
+
+    <button onclick="toggleConfig()">Configuración</button>
+    <button onclick="calculate()">Calcular Total</button>
+
+    <div class="total" id="total">Total semanal: 0</div>
+</div>
+
+<footer>
+<h4>Pagina web creada por <a href="https://github.com/jesus-almeida" target="_blank" rel="noopener noreferrer">Jesús Almeida</a> (Alias: GCoder).</h4>
+<p><a href="https://github.com/jesus-almeida/calculadoraDePasajes" target="_blank" rel="noopener noreferrer">Repositorio de GitHub.</a></p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
