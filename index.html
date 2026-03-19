@@ -26,7 +26,7 @@
         <h3>Gastos adicionales</h3>
         <input type="text" id="extraName" placeholder="Descripción">
         <input type="number" id="extraAmount" placeholder="Monto">
-        <button onclick="addExpense()">Agregar</button>
+        <button id="addExpenseBtn">Agregar</button>
 
         <div id="expensesList"></div>
     </div>
@@ -36,21 +36,28 @@
         Ruta 10: <input type="number" id="ruta10"><br>
         Ruta 10-B: <input type="number" id="ruta10b"><br>
         Ruta Universidad: <input type="number" id="rutaUni"><br>
-        <button onclick="saveConfig()">Guardar</button>
+        <button id="saveConfigBtn">Guardar</button>
     </div>
+	
+	<button id="toggleConfigBtn">Configuración</button>
+	<button id="calculateBtn">Calcular Total</button>
 
-    <button onclick="toggleConfig()">Configuración</button>
-    <button onclick="calculate()">Calcular Total</button>
-
-    <div class="total" id="total">Total semanal: 0</div>
+    <div class="total" id="total">
+	Total Semanal: Bs. 0 <br>
+	Total Verónica: Bs. 0 <br>
+	Total Gabriel: Bs 0
+	</div>
 </div>
 
 <footer>
-<h4>Pagina web creada por <a href="https://github.com/jesus-almeida" target="_blank" rel="noopener noreferrer">Jesús Almeida</a> (Alias: GCoder).</h4>
-<p><a href="https://github.com/jesus-almeida/calculadoraDePasajes" target="_blank" rel="noopener noreferrer">Repositorio de GitHub.</a></p>
+<h4>
+Pagina web creada por <a href="https://github.com/jesus-almeida" target="_blank" rel="noopener noreferrer">Jesús Almeida</a> (Alias: GCoder). <br><br>
+<a href="https://github.com/jesus-almeida/calculadoraDePasajes" target="_blank" rel="noopener noreferrer">Repositorio de GitHub.</a>
+</h4>
+
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 
 </body>
 </html>

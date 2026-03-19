@@ -142,9 +142,9 @@ function calculate() {
     total += extras;
 
     document.getElementById("total").innerHTML = `
-        Total semanal: Bs ${total} <br>
-        🧍 Verónica: Bs ${totalVeronica} <br>
-        🧍 Gabriel: Bs ${totalGabriel}
+        Total Semanal: Bs. ${total} <br>
+        Total Verónica: Bs. ${totalVeronica} <br>
+        Total Gabriel: Bs. ${totalGabriel}
     `;
 }
 
@@ -168,7 +168,6 @@ function saveConfig() {
     config.rutaUni = Number(document.getElementById("rutaUni").value);
 
     localStorage.setItem("config", JSON.stringify(config));
-    alert("Configuración guardada");
 }
 
 
@@ -201,9 +200,9 @@ function renderExpenses() {
         const div = document.createElement("div");
         div.className = "expense-item";
 
-        div.innerHTML = `
+        div.innerHTML = `<br>
             ${e.name} - Bs ${e.amount}
-            <button data-index="${i}" class="deleteBtn">❌</button>
+            <button data-index="${i}" class="deleteBtn">Borrar</button>
         `;
 
         list.appendChild(div);
@@ -226,16 +225,19 @@ function saveState() {
 
 
 // ==========================
-// BOTONES
-// ==========================
-document.getElementById("calculateBtn").addEventListener("click", calculate);
-document.getElementById("toggleConfigBtn").addEventListener("click", toggleConfig);
-document.getElementById("saveConfigBtn").addEventListener("click", saveConfig);
-document.getElementById("addExpenseBtn").addEventListener("click", addExpense);
-
-
-// ==========================
 // INIT
 // ==========================
-renderDays();
-renderExpenses();
+document.addEventListener("DOMContentLoaded", () => {
+    renderDays();
+    renderExpenses();
+
+
+// ==========================
+// BOTONES
+// ==========================
+	
+	document.getElementById("calculateBtn").addEventListener("click", calculate);
+	document.getElementById("toggleConfigBtn").addEventListener("click", toggleConfig);
+	document.getElementById("saveConfigBtn").addEventListener("click", saveConfig);
+	document.getElementById("addExpenseBtn").addEventListener("click", addExpense);
+});
