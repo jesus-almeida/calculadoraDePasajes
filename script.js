@@ -224,14 +224,26 @@ function saveState() {
 }
 
 
+
+
 // ==========================
 // INIT
 // ==========================
+
+// Inicializar state si no existe en localStorage
+if (!localStorage.getItem("state")) {
+    state = {};
+    days.forEach(day => {
+        state[day] = defaultState(day);
+    });
+    saveState();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     renderDays();
     renderExpenses();
 
-
+    
 // ==========================
 // BOTONES
 // ==========================
