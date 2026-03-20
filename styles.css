@@ -1,89 +1,89 @@
 body {
-        font-family: Arial, sans-serif;
-        background: #0f172a;
-        color: #fff;
-        margin: 0;
-        padding: 20px;
-    }
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+}
 
-    h1 {
-        text-align: center;
-        font-size: 50px;
-    }
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
 
-    .descripcionWeb {
-        font-size: 20px;
-        text-align-last: center;
-    }
+.descripcionWeb {
+    font-size: 20px;
+    text-align-last: center;
+}
 
-    .container {
-        max-width: 800px;
-        margin: auto;
-    }
+.container {
+    max-width: 800px;
+    margin: auto;
+}
 
-    .card {
-        background: #1e293b;
-        padding: 15px;
-        margin-bottom: 15px;
-        border-radius: 15px;
-    }
+.card {
+    background: #1e293b;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
 
-    select, input {
-        padding: 5px;
-        margin: 5px;
-        border-radius: 5px;
-        border: none;
-    }
+select, input {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+}
 
-    button {
-        padding: 10px 15px;
-        margin: 5px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        background: #38bdf8;
-        color: #000;
-        font-weight: bold;
-    }
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #38bdf8;
+    color: #000;
+    font-weight: bold;
+}
 
-    button:hover {
-        background: #0ea5e9;
-    }
+button:hover {
+    background: #0ea5e9;
+}
 
-    .total {
-        font-size: 26px;
-        text-align: center;
-        margin-top: 20px;
-        font-weight: bold;
-        color: #fff;
-    }
+.total {
+    font-size: 26px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #fff;
+}
 
-    .config-panel {
-        display: none;
-    }
+.config-panel {
+    display: none;
+}
 
-    .expense-item {
+.expense-item {
         display: flex;
         justify-content: space-between;
         margin: 5px 0;
     }
 	
-	footer {
-		text-align: center;
-		margin-top: 2cm;
-	}
+footer {
+	text-align: center;
+	margin-top: 2cm;
+}
 	
-	a {
-		color: #fff;
-		text-decoration-color: #38bdf8;
-		transition: text-decoration-color, color 1s;
-	}
+a {
+	color: #fff;
+	text-decoration-color: #38bdf8;
+	transition: text-decoration-color, color 1s;
+}
 	
-	a:hover {
-		color: #38bdf8;
-		text-decoration-color: #fff;
-	}
+a:hover {
+	color: #38bdf8;
+	text-decoration-color: #fff;
+}
 
-    .inputRuta {
-        width: 45px;
-    }
+.inputRuta {
+    width: 45px;
+}
