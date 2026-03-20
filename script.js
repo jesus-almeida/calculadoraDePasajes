@@ -30,7 +30,7 @@ function renderDays() {
         div.className = "card";
 
         div.innerHTML = `
-            <h3>${day}</h3>
+            <h2>${day}</h2>
 
             <strong>Verónica:</strong>
             <select data-day="${day}" class="veronicaSelect">
@@ -142,9 +142,9 @@ function calculate() {
     total += extras;
 
     document.getElementById("total").innerHTML = `
-        Total Semanal: Bs. ${total} <br>
-        Total Verónica: Bs. ${totalVeronica} <br>
-        Total Gabriel: Bs. ${totalGabriel}
+        Total Semanal: ${total} Bs.<br>
+        Total Verónica: ${totalVeronica} Bs.<br>
+        Total Gabriel: ${totalGabriel} Bs.
     `;
 }
 
@@ -201,7 +201,7 @@ function renderExpenses() {
         div.className = "expense-item";
 
         div.innerHTML = `<br>
-            ${e.name} - Bs ${e.amount}
+            ${e.name} - ${e.amount} Bs.
             <button data-index="${i}" class="deleteBtn">Borrar</button>
         `;
 

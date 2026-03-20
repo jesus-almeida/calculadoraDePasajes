@@ -18,12 +18,12 @@
 
 <div class="container">
     <h1>Calculadora de Pasajes</h1>
-    <h4>Pagina web hecha con el objetivo de ayudar a mi pareja y a mi a calcular cuanto dinero gastaremos en pasajes en toda la semana.</h4>
+    <h4 class="descripcionWeb">Pagina web hecha con el objetivo de ayudar a mi pareja y a mi a calcular cuanto dinero gastaremos en pasajes en toda la semana.</h4>
 
     <div id="days"></div>
 
     <div class="card">
-        <h3>Gastos adicionales</h3>
+        <h2>Gastos adicionales</h2>
         <input type="text" id="extraName" placeholder="Descripción">
         <input type="number" id="extraAmount" placeholder="Monto">
         <button id="addExpenseBtn">Agregar</button>
@@ -33,9 +33,9 @@
 
     <div class="card config-panel" id="configPanel">
         <h3>Configuración</h3>
-        Ruta 10: <input type="number" id="ruta10"><br>
-        Ruta 10-B: <input type="number" id="ruta10b"><br>
-        Ruta Universidad: <input type="number" id="rutaUni"><br>
+        	Ruta 10: <input type="number" id="ruta10" class="inputRuta"> Bs.<br>
+        	Ruta 10-B: <input type="number" id="ruta10b" class="inputRuta"> Bs.<br>
+        	Ruta Universidad: <input type="number" id="rutaUni" class="inputRuta"> Bs.<br>
         <button id="saveConfigBtn">Guardar</button>
     </div>
 	
@@ -43,9 +43,9 @@
 	<button id="calculateBtn">Calcular Total</button>
 
     <div class="total" id="total">
-	Total Semanal: Bs. 0 <br>
-	Total Verónica: Bs. 0 <br>
-	Total Gabriel: Bs 0
+	Total Semanal: 0 Bs.<br>
+	Total Verónica: 0 Bs.<br>
+	Total Gabriel: 0 Bs.
 	</div>
 </div>
 

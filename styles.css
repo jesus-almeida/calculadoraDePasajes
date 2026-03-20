@@ -8,10 +8,16 @@ body {
 
     h1 {
         text-align: center;
+        font-size: 50px;
+    }
+
+    .descripcionWeb {
+        font-size: 20px;
+        text-align-last: center;
     }
 
     .container {
-        max-width: 900px;
+        max-width: 800px;
         margin: auto;
     }
 
@@ -77,3 +83,7 @@ body {
 		color: #38bdf8;
 		text-decoration-color: #fff;
 	}
+
+    .inputRuta {
+        width: 45px;
+    }
