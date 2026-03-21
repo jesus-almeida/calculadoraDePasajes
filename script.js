@@ -230,6 +230,15 @@ function saveState() {
 // INIT
 // ==========================
 
+// Registro del Service Worker
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js")
+            .then(reg => console.log("Service Worker registrado"))
+            .catch(err => console.log("Error:", err));
+    });
+}
+
 // Inicializar state si no existe en localStorage
 if (!localStorage.getItem("state")) {
     state = {};
