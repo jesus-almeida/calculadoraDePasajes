@@ -1,11 +1,11 @@
 const CACHE_NAME = "transporte-cache-v1";
 
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/styles.css",
-  "/script.js",
-  "/manifest.json"
+  "./",
+  "./index.html",
+  "./styles.css",
+  "./script.js",
+  "./manifest.json"
 ];
 
 // Instalar
