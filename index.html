@@ -6,10 +6,10 @@
 	<title>Calculadora de Pasajes</title>
 	<link rel="stylesheet" href="styles.css">
 
-    <link rel="icon" type="image/png" href="icons/favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
-	<link rel="shortcut icon" href="icons/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="icons/icon-96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="icons/icon.svg" />
+	<link rel="shortcut icon" href="icons/icon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180.png" />
 	<meta name="apple-mobile-web-app-title" content="Pasajes" />
 	<link rel="manifest" href="manifest.json" />
 	<meta name="theme-color" content="#38bdf8" />
@@ -24,7 +24,7 @@
     <div id="days"></div>
 
     <div class="card">
-        <h2>Gastos adicionales</h2>
+        <h2>Gastos Adicionales</h2>
         <input type="text" id="extraName" placeholder="Descripción">
         <input type="number" id="extraAmount" placeholder="Monto">
         <button id="addExpenseBtn">Agregar</button>
@@ -33,20 +33,22 @@
     </div>
 
     <div class="card config-panel" id="configPanel">
-        <h3>Configuración</h3>
+        <h2>Configuración</h2>
         	Ruta 10: <input type="number" id="ruta10" class="inputRuta"> Bs.<br>
         	Ruta 10-B: <input type="number" id="ruta10b" class="inputRuta"> Bs.<br>
         	Ruta Universidad: <input type="number" id="rutaUni" class="inputRuta"> Bs.<br>
         <button id="saveConfigBtn">Guardar</button>
     </div>
 	
-	<button id="toggleConfigBtn">Configuración</button>
-	<button id="calculateBtn">Calcular Total</button>
+	<div class="buttons">
+		<button id="toggleConfigBtn">Configuración</button>
+		<button id="calculateBtn">Calcular Total</button>
+	</div>
 
     <div class="total" id="total">
-	Total Semanal: 0 Bs.<br>
-	Total Verónica: 0 Bs.<br>
-	Total Gabriel: 0 Bs.
+    	💰 Total semanal: 0 Bs.<br>
+    	👩 Verónica: 0 Bs.<br>
+    	👨 Gabriel: 0 Bs.
 	</div>
 </div>
 

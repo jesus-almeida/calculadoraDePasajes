@@ -1,89 +1,196 @@
+* {
+   box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #0f172a;
+    font-family: system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
     color: #fff;
     margin: 0;
     padding: 20px;
 }
 
+/* TITULOS */
 h1 {
     text-align: center;
-    font-size: 50px;
+    font-size: 36px;
+    margin-bottom: 5px;
 }
 
 .descripcionWeb {
-    font-size: 20px;
-    text-align-last: center;
+    font-size: 15px;
+    text-align: center;
+    color: #94a3b8;
+    margin-bottom: 20px;
 }
 
+/* CONTENEDOR */
 .container {
-    max-width: 800px;
+    max-width: 700px;
     margin: auto;
 }
 
+/* TARJETAS */
 .card {
-    background: #1e293b;
-    padding: 15px;
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 18px;
     margin-bottom: 15px;
-    border-radius: 15px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: transform 0.2s ease;
 }
 
+.card:hover {
+    transform: scale(1.01);
+}
+
+/* INPUTS */
 select, input {
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
+    padding: 8px;
+    margin: 6px 4px;
+    border-radius: 8px;
     border: none;
+    background: #0f172a;
+    color: #fff;
+    outline: none;
+    border: 1px solid transparent;
+    transition: border 0.2s;
 }
 
+select:focus, input:focus {
+    border: 1px solid #38bdf8;
+}
+
+/* BOTONES */
 button {
-    padding: 10px 15px;
-    margin: 5px;
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
-    background: #38bdf8;
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
     color: #000;
     font-weight: bold;
+    transition: all 0.2s ease;
 }
 
 button:hover {
-    background: #0ea5e9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(56, 189, 248, 0.3);
 }
 
-.total {
-    font-size: 26px;
-    text-align: center;
-    margin-top: 20px;
-    font-weight: bold;
+/* BOTONES SECUNDARIOS */
+#toggleConfigBtn {
+    background: #1e293b;
     color: #fff;
 }
 
-.config-panel {
-    display: none;
+.deleteBtn {
+    width: 100px;
 }
 
-.expense-item {
-        display: flex;
-        justify-content: space-between;
-        margin: 5px 0;
+/* TOTAL */
+.total {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    font-weight: bold;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #022c22;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* Animación del total */
+.total {
+    transition: all 0.3s ease;
+}
+
+.total.animate {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+}
+
+/* Animación de aparición */
+.fade-in {
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
     }
-	
-footer {
-	text-align: center;
-	margin-top: 2cm;
-}
-	
-a {
-	color: #fff;
-	text-decoration-color: #38bdf8;
-	transition: text-decoration-color, color 1s;
-}
-	
-a:hover {
-	color: #38bdf8;
-	text-decoration-color: #fff;
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+/* GASTOS */
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    background: #020617;
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 6px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.expense-item.removing {
+    opacity: 0;
+    transform: translateX(40px);
+}
+
+/* CONFIG */
+.config-panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: all 0.35s ease;
+    margin-bottom: 0;
+}
+
+.config-panel.active {
+    max-height: 300px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* INPUT PEQUEÑO */
 .inputRuta {
-    width: 45px;
+    width: 60px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .total {
+        font-size: 18px;
+    }
 }

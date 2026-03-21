@@ -142,10 +142,20 @@ function calculate() {
     total += extras;
 
     document.getElementById("total").innerHTML = `
-        Total Semanal: ${total} Bs.<br>
-        Total Verónica: ${totalVeronica} Bs.<br>
-        Total Gabriel: ${totalGabriel} Bs.
+        💰 Total Semanal: ${total} Bs.<br>
+        👩 Verónica: ${totalVeronica} Bs.<br>
+        👨 Gabriel: ${totalGabriel} Bs.
     `;
+
+    const totalDiv = document.getElementById("total");
+
+    // Forzar animación
+    totalDiv.classList.remove("animate");
+    void totalDiv.offsetWidth; // reinicia animación
+    totalDiv.classList.add("animate");
+
+    // Fade suave
+    totalDiv.classList.add("fade-in");
 }
 
 
@@ -154,8 +164,7 @@ function calculate() {
 // ==========================
 function toggleConfig() {
     const panel = document.getElementById("configPanel");
-
-    panel.style.display = panel.style.display === "none" ? "block" : "none";
+    panel.classList.toggle("active");
 
     document.getElementById("ruta10").value = config.ruta10;
     document.getElementById("ruta10b").value = config.ruta10b;
@@ -187,9 +196,18 @@ function addExpense() {
 }
 
 function deleteExpense(index) {
-    expenses.splice(index, 1);
-    localStorage.setItem("expenses", JSON.stringify(expenses));
-    renderExpenses();
+    const items = document.querySelectorAll(".expense-item");
+    const item = items[index];
+
+    if (!item) return;
+
+    item.classList.add("removing");
+
+    setTimeout(() => {
+        expenses.splice(index, 1);
+        localStorage.setItem("expenses", JSON.stringify(expenses));
+        renderExpenses();
+    }, 250); // igual a la transición
 }
 
 function renderExpenses() {
