@@ -1,6 +1,6 @@
-const CACHE_NAME = "transporte-cache-v1";
+const CACHE_NAME = "transporte-cache";
 
-const urlsToCache = [
+const ASSETS = [
   "./",
   "./index.html",
   "./styles.css",
@@ -9,22 +9,37 @@ const urlsToCache = [
 ];
 
 // Instalar
-self.addEventListener("install", event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
+self.addEventListener("install", e => {
+  e.waitUntil(
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(ASSETS);
+    })
   );
 });
 
-// Activar
-self.addEventListener("activate", event => {
-  console.log("Service Worker activo");
+// Activar (limpiar cache viejo)
+self.addEventListener("activate", e => {
+  e.waitUntil(
+    caches.keys().then(keys => {
+      return Promise.all(
+        keys.filter(key => key !== CACHE_NAME)
+            .map(key => caches.delete(key))
+      );
+    })
+  );
 });
 
-// Interceptar peticiones (offline)
-self.addEventListener("fetch", event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => response || fetch(event.request))
+// Fetch inteligente
+self.addEventListener("fetch", e => {
+  e.respondWith(
+    fetch(e.request)
+      .then(res => {
+        const clone = res.clone();
+        caches.open(CACHE_NAME).then(cache => {
+          cache.put(e.request, clone);
+        });
+        return res;
+      })
+      .catch(() => caches.match(e.request))
   );
 });
