@@ -30,28 +30,40 @@ self.addEventListener("activate", e => {
 });
 
 // Fetch inteligente
-self.addEventListener("fetch", e => {
+self.addEventListener("fetch", event => {
 
-  // ❌ Ignorar requests que no sean HTTP/HTTPS
-  if (!e.request.url.startsWith("http")) return;
+  // Ignorar cosas raras (extensiones, etc.)
+  if (!event.request.url.startsWith("http")) return;
 
-  e.respondWith(
-    fetch(e.request)
-      .then(res => {
+  // 🧠 Si es navegación (abrir la app)
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      fetch(event.request)
+        .catch(() => caches.match("./index.html"))
+    );
+    return;
+  }
 
-        // ❌ Ignorar respuestas inválidas
-        if (!res || res.status !== 200 || res.type !== "basic") {
-          return res;
-        }
+  // 🧠 Para archivos normales (CSS, JS, etc.)
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => {
+        return response || fetch(event.request)
+          .then(res => {
+            // Validar respuesta
+            if (!res || res.status !== 200 || res.type !== "basic") {
+              return res;
+            }
 
-        const clone = res.clone();
+            const clone = res.clone();
 
-        caches.open(CACHE_NAME).then(cache => {
-          cache.put(e.request, clone);
-        });
+            caches.open(CACHE_NAME).then(cache => {
+              cache.put(event.request, clone);
+            });
 
-        return res;
+            return res;
+          });
       })
-      .catch(() => caches.match(e.request))
+      .catch(() => caches.match("./index.html"))
   );
 });
