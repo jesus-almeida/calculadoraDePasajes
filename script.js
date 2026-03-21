@@ -172,6 +172,8 @@ function toggleConfig() {
 }
 
 function saveConfig() {
+    const panel = document.getElementById("configPanel");
+    panel.classList.toggle("active");
     config.ruta10 = Number(document.getElementById("ruta10").value);
     config.ruta10b = Number(document.getElementById("ruta10b").value);
     config.rutaUni = Number(document.getElementById("rutaUni").value);
