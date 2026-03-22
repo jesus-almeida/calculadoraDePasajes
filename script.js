@@ -3,8 +3,8 @@ const days = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
 // Configuración (tarifas)
 let config = JSON.parse(localStorage.getItem("config")) || {
     ruta10: 70,
-    ruta10b: 70,
-    rutaUni: 40
+    ruta10b: 120,
+    rutaUni: 60
 };
 
 // Estado de la semana
@@ -193,6 +193,9 @@ function addExpense() {
 
     expenses.push({ name, amount });
     localStorage.setItem("expenses", JSON.stringify(expenses));
+
+    document.getElementById("extraName").value = "";
+    document.getElementById("extraAmount").value = "";
 
     renderExpenses();
 }
