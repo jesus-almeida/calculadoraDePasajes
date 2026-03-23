@@ -1,7 +1,9 @@
 {
   "name": "Calculadora de Pasajes",
   "short_name": "Pasajes",
+  "description": "Página web hecha con el objetivo de ayudar a mi pareja y a mi a calcular cuanto dinero gastaremos en pasajes en toda la semana.",
   "start_url": ".",
+  "scope": ".",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#38bdf8",
